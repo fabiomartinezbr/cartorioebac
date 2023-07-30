@@ -113,54 +113,68 @@ int main()
 {
     int opcao=0; //definindo variaveis
     int x=1;
+    char senhadigitada[10]="a";
+    int comparacao;
 
-    for(x=1;x=1;)
+    printf("### Registro de alunos da EBAC ###\n\n");
+    printf("login de administrador!\n\nDigite a sua senha: ");
+    scanf("%s", senhadigitada);
+
+    comparacao = strcmp(senhadigitada, "admin");
+
+    if(comparacao == 0)
     {
-
-        system("clear"); // responsavel por limpar a tela
-
-        setlocale(LC_ALL, "pt_BR.UTF-8"); //definindo linguagem
-
-        printf("### Registro de alunos da EBAC ###\n\n");//inicio do menu
-        printf("Qual opção do menu você deseja?\n\n");
-        printf("\t1 - Registro de nomes\n");
-        printf("\t2 - Consulta de nomes\n");
-        printf("\t3 - Exclusão de nomes\n");
-        printf("\t4 - sair do sistema\n\n");
-        printf("Opção: ");//fim do menu
-
-        scanf("%d", &opcao);//armazenando a escolha do usuario
-
         system("clear");
 
-        switch(opcao)
+        for(x=1;x=1;)
         {
-            case 1:
-            registro();//chamada de funcoes
-            break;
 
-            case 2:
-            consulta();
-            break;
+            system("clear"); // responsavel por limpar a tela
 
-            case 3:
-            deletar();
-            break;
+            setlocale(LC_ALL, "pt_BR.UTF-8"); //definindo linguagem
 
-            case 4:
-            printf("Obrigado por usar o sistema!\n");
-            return 0;
-            break;
+            printf("### Registro de alunos da EBAC ###\n\n");//inicio do menu
+            printf("Qual opção do menu você deseja?\n\n");
+            printf("\t1 - Registro de nomes\n");
+            printf("\t2 - Consulta de nomes\n");
+            printf("\t3 - Exclusão de nomes\n");
+            printf("\t4 - sair do sistema\n\n");
+            printf("Opção: ");//fim do menu
 
-            default:
-            printf("Você digitou uma opção que não existe!\n");//fim da selecao
-            pause();
-            break;
+            scanf("%d", &opcao);//armazenando a escolha do usuario
 
+            system("clear");
+
+            switch(opcao)
+            {
+                case 1:
+                registro();//chamada de funcoes
+                break;
+
+                case 2:
+                consulta();
+                break;
+
+                case 3:
+                deletar();
+                break;
+
+                case 4:
+                printf("Obrigado por usar o sistema!\n");
+                return 0;
+                break;
+
+                default:
+                printf("Você digitou uma opção que não existe!\n");//fim da selecao
+                pause();
+                break;
+
+
+            }
 
         }
-
-
     }
 
+    else
+        printf("Senha incorreta!");
 }
